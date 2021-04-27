@@ -11,7 +11,7 @@
 ### 2. Clone project
 
 ```
-git clone https://github.com/gajdaw-teaching/ex-03-rivers-crud/
+git clone https://github.com/MateuszZablocki/River_CRUD_Java
 ```
 
 ### 3. How to run API
