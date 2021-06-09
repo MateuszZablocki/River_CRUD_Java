@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ApiService from "../service/ApiService";
+import {Layout} from "../layout";
 
 class ListRiverComponent extends Component {
 
@@ -46,14 +47,18 @@ class ListRiverComponent extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center">River Details</h2>
-                <button className="btn btn-danger" onClick={() => this.addRiver()}> Add River</button>
-                <table className="table table-striped">
+                <Layout>
+                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3 border border-green-700 rounded ju"
+                            onClick={() => this.addRiver()}> Add River
+                    </button>
+                </Layout>
+
+                <table align="center" class="table-fixed content-center">
                     <thead>
                     <tr>
 
-                        <th>River Name</th>
-                        <th>River Length</th>
+                        <th class="w-1/4">River Name</th>
+                        <th class="w-1/4">River Length</th>
 
                     </tr>
                     </thead>
@@ -64,8 +69,8 @@ class ListRiverComponent extends Component {
                                 <tr key={rivers.id}>
                                     <td>{rivers.river_name}</td>
                                     <td>{rivers.river_length}</td>
-                                    <td><button className="btn btn-success" onClick={() => this.deleteRiver(rivers.id)}> Delete</button></td>
-                                    <td><button className="btn btn-success" onClick={() => this.editRiver(rivers.id)}> Edit</button></td>
+                                    <td><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded" onClick={() => this.deleteRiver(rivers.id)}> Delete</button></td>
+                                    <td><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={() => this.editRiver(rivers.id)}> Edit</button></td>
 
                                 </tr>
                         )

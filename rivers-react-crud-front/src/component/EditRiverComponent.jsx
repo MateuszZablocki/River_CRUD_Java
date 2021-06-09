@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ApiService from "../service/ApiService";
+import {Layout} from "../layout";
 
 class EditRiverComponent extends Component {
 
@@ -45,29 +46,34 @@ class EditRiverComponent extends Component {
 
     render() {
         return (
-            <div>
-                <h2 className="text-center">Edit River</h2>
+
+                <Layout>
+                <h1 className='text-3xl'>Edit River</h1>
                 <form>
-
-                    <div className="form-group">
-                        <label>ID:</label>
-                        <input placeholder="id" name="id" className="form-control" value={this.state.id} onChange={this.onChange}/>
+                    <div className="mx-3 mb-6">
+                    <div className="form-group" >
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"> ID: </label>
+                        <input class ="shadow appearance-none border rounded aspect-w-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline form-control" placeholder="id" name="id" value={this.state.id} onChange={this.onChange}/>
                     </div>
                     <div className="form-group">
-                        <label>River Name:</label>
-                        <input placeholder="river_name" name="river_name" className="form-control" value={this.state.river_name} onChange={this.onChange}/>
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">River Name: </label>
+                        <input class ="shadow appearance-none border rounded aspect-w-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline form-control" placeholder="river_name" name="river_name" value={this.state.river_name} onChange={this.onChange}/>
                     </div>
 
                     <div className="form-group">
-                        <label>River length:</label>
-                        <input placeholder="river_length" name="river_length" className="form-control" value={this.state.river_length} onChange={this.onChange}/>
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">River length: </label>
+                        <input class ="shadow appearance-none border rounded aspect-w-10 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline form-control" placeholder="river_length" name="river_length" value={this.state.river_length} onChange={this.onChange}/>
+                    </div>
                     </div>
 
 
 
-                    <button className="btn btn-success" onClick={this.saveRiver}>Save</button>
                 </form>
-            </div>
+                    <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                        onClick={this.saveRiver}>Save
+                    </button>
+                </Layout>
         );
     }
 }
